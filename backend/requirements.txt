@@ -1,0 +1,56 @@
+# Core
+fastapi
+uvicorn
+python-socketio
+requests
+python-dotenv
+
+# Voice
+# Note: PyAudio usually requires manual installation of .whl on Windows if pip fails
+pyaudio
+# openWakeWord for local wake word detection
+openwakeword
+# numpy is required for openwakeword
+numpy
+# onnxruntime is required for openwakeword
+onnxruntime
+
+# LLM
+langchain
+langchain-community
+ollama
+
+# Tools
+selenium
+playwright
+pyautogui
+chromadb
+
+# Vision & Reasoning (The Pivot)
+transformers
+torch
+torchvision
+torchaudio
+pillow
+timm
+einops
+accelerate
+scipy
+
+# Security & Advanced Features
+mediapipe
+opencv-python
+
+# Voice Interaction
+faster-whisper
+edge-tts
+pygame
+
+# Jarvis 3.0 - Proactive Intelligence
+mem0ai
+qwen-vl-utils
+
+# Cloud Pivot
+google-generativeai
+python-dotenv
+pyaudio
