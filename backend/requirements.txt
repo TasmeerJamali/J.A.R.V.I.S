@@ -1,56 +1,53 @@
-# Core
+# Core Server
 fastapi
-uvicorn
+uvicorn[standard]
 python-socketio
 requests
 python-dotenv
 
-# Voice
-# Note: PyAudio usually requires manual installation of .whl on Windows if pip fails
+# Voice - Wake Word Detection
 pyaudio
-# openWakeWord for local wake word detection
 openwakeword
-# numpy is required for openwakeword
 numpy
-# onnxruntime is required for openwakeword
 onnxruntime
 
-# LLM
+# Voice - Speech Recognition
+faster-whisper
+
+# Voice - Text to Speech
+edge-tts
+pygame
+
+# Cloud AI Brain
+google-generativeai
+
+# Local LLM (optional, for offline mode)
 langchain
 langchain-community
 ollama
 
-# Tools
+# Desktop Automation
+pyautogui
 selenium
 playwright
-pyautogui
-chromadb
+scipy
 
-# Vision & Reasoning (The Pivot)
+# Vision Models (optional, for local vision)
 transformers
 torch
 torchvision
-torchaudio
 pillow
 timm
 einops
 accelerate
-scipy
 
-# Security & Advanced Features
+# Memory System
+mem0ai
+chromadb
+
+# Security - Face Detection
 mediapipe
 opencv-python
 
-# Voice Interaction
-faster-whisper
-edge-tts
-pygame
-
-# Jarvis 3.0 - Proactive Intelligence
-mem0ai
+# Computer Control Agent (optional)
 qwen-vl-utils
-
-# Cloud Pivot
-google-generativeai
-python-dotenv
-pyaudio

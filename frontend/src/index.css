@@ -3,12 +3,39 @@
 @tailwind utilities;
 
 :root {
-  background-color: transparent;
+    background-color: transparent;
+    color-scheme: dark;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  overflow: hidden;
-  background: transparent;
-  font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    overflow: hidden;
+    background: transparent;
+    font-family: 'Courier New', Courier, monospace;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+::selection {
+    background: rgba(34, 211, 238, 0.3);
+    color: #22d3ee;
+}
+
+input::placeholder {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+input:focus {
+    outline: none;
 }

@@ -8,14 +8,20 @@ export default {
         extend: {
             colors: {
                 cyan: {
+                    300: '#67e8f9',
                     400: '#22d3ee',
                     500: '#06b6d4',
+                    600: '#0891b2',
                     900: '#164e63',
                 },
             },
             animation: {
                 'spin-slow': 'spin 10s linear infinite',
-            }
+                'pulse-slow': 'pulse 3s ease-in-out infinite',
+            },
+            fontFamily: {
+                mono: ['"Courier New"', 'Courier', 'monospace'],
+            },
         },
     },
     plugins: [],
