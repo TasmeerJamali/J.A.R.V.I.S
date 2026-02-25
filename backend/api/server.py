@@ -3,6 +3,7 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import time
+import uuid
 
 # Create a Socket.IO server
 sio = socketio.AsyncServer(async_mode='asgi', cors_allowed_origins='*')
@@ -98,6 +99,7 @@ async def emit_voice_activity(state, text=""):
 
 async def emit_command_log(entry):
     """Emit a new command to the frontend log"""
+    entry['id'] = str(uuid.uuid4())[:8]
     command_history.append(entry)
     await sio.emit('command_log', entry)
 
@@ -115,6 +117,17 @@ async def emit_notification(message, level="info"):
     await sio.emit('notification', {
         'message': message,
         'level': level,
+        'timestamp': time.time(),
+    })
+
+async def emit_target_lock(x, y, width, height, label="Target"):
+    """Emit a target lock overlay to the frontend"""
+    await sio.emit('target_lock', {
+        'x': x,
+        'y': y,
+        'width': width,
+        'height': height,
+        'label': label,
         'timestamp': time.time(),
     })
 

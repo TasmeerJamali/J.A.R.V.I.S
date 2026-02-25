@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const ArcReactor = () => {
     return (
-        <div className="flex items-center justify-center h-screen w-screen bg-transparent overflow-hidden">
+        <div className="flex items-center justify-center w-full h-full bg-transparent overflow-hidden relative">
             {/* Container for the reactor */}
             <div className="relative w-64 h-64 flex items-center justify-center">
 

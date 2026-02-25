@@ -73,7 +73,7 @@ const CommandLog = ({ commands }) => {
                         </div>
                     ) : (
                         commands.map((cmd, i) => (
-                            <CommandEntry key={`${cmd.timestamp}-${i}`} entry={cmd} />
+                            <CommandEntry key={cmd.id || `${cmd.timestamp}-${i}`} entry={cmd} />
                         ))
                     )}
                 </AnimatePresence>

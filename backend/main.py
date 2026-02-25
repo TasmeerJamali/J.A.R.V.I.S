@@ -16,7 +16,8 @@ from voice.tts import TextToSpeech
 from api.server import (
     start_server, sio,
     emit_status_update, emit_voice_activity,
-    emit_command_log, emit_brain_activity, emit_notification
+    emit_command_log, emit_brain_activity, emit_notification,
+    emit_target_lock
 )
 # from core.vision import VisionModule # DISABLED for Cloud Pivot
 # from brain.llm import ReasoningAgent # DISABLED for Cloud Pivot
@@ -242,10 +243,9 @@ class JarvisBackend:
 
             elif action == "click":
                 x, y = args[0], args[1]
-                self._emit_async(sio.emit('target_lock', {
-                    'x': x - 25, 'y': y - 25, 'width': 50, 'height': 50,
-                    'label': explanation or 'Target'
-                }))
+                self._emit_async(emit_target_lock(
+                    x - 25, y - 25, 50, 50, explanation or 'Target'
+                ))
                 self._emit_async(emit_command_log({
                     'text': f"Clicking at ({x}, {y}) — {explanation}",
                     'source': 'jarvis',

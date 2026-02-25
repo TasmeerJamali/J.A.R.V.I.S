@@ -118,6 +118,7 @@ function App() {
     const handleSendCommand = useCallback((text) => {
         socket.emit('send_command', { text });
         setCommands(prev => [...prev.slice(-99), {
+            id: crypto.randomUUID().slice(0, 8),
             text,
             source: 'frontend',
             timestamp: Date.now() / 1000,
